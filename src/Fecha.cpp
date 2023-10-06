@@ -7,18 +7,16 @@
 
 #include "Fecha.h"
 
-Fecha::Fecha() {
-	// TODO Auto-generated constructor stub
-
-}
-
-float Fecha::getDia(){
+Fecha::Fecha() {}
+Fecha::Fecha(unsigned int dia, unsigned int mes, unsigned int anio):
+		dia(dia), mes(mes), anio(anio) {}
+int Fecha::getDia(){
 	return dia;
 }
-float Fecha::getMes(){
+int Fecha::getMes(){
 	return mes;
 }
-float Fecha::getAnio(){
+int Fecha::getAnio(){
 	return anio;
 }
 string Fecha::getFecha(){

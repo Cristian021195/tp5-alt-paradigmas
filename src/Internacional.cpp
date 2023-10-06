@@ -6,13 +6,18 @@
  */
 
 #include "Internacional.h"
+#include "Pelicula.h"
+#include <string>
+#include <iostream>
 
-Internacional::Internacional() {
-	// TODO Auto-generated constructor stub
-}
+using namespace std;
+
+Internacional::Internacional() {}
+Internacional::Internacional(string origen, string nombre, Fecha fecha_estreno, float precio_base):
+		origen(origen), Pelicula(nombre, fecha_estreno, precio_base){}
 
 float Internacional::montoPelicula(){
-	return 0;
+	return precio_base*1.3;
 }
 void Internacional::absFn(){}
 

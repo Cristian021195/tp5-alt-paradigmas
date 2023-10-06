@@ -7,9 +7,18 @@
 
 #include "Pelicula.h"
 
-Pelicula::Pelicula() {
-	// TODO Auto-generated constructor stub
+Pelicula::Pelicula() {}
+Pelicula::Pelicula(string nombre, Fecha fecha_estreno, float precio_base):
+	nombre(nombre), fecha_estreno(fecha_estreno), precio_base(precio_base) {}
 
+string Pelicula::getNombre(){
+	return nombre;
+}
+float Pelicula::getPrecioBase(){
+	return precio_base;
+}
+Fecha Pelicula::getFecha(){
+	return fecha_estreno;
 }
 
 float Pelicula::montoPelicula(){
@@ -18,7 +27,6 @@ float Pelicula::montoPelicula(){
 void absFn(){}
 
 Pelicula::~Pelicula() {
-	// TODO Auto-generated destructor stub
 }
 
 Pelicula::Pelicula(const Pelicula &other) {

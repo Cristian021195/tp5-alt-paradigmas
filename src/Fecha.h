@@ -19,11 +19,13 @@ class Fecha {
 	unsigned int mes;
 	unsigned int anio;
 public:
+	static const int anio_actual = 2023;
 	Fecha();
+	Fecha(unsigned int dia, unsigned int mes, unsigned int anio);
 	virtual ~Fecha();
-	float getDia();
-	float getMes();
-	float getAnio();
+	int getDia();
+	int getMes();
+	int getAnio();
 	string getFecha();
 	Fecha(const Fecha &other);
 };

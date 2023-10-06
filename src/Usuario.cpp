@@ -7,17 +7,19 @@
 
 #include "Usuario.h"
 
-Usuario::Usuario() {
-	// TODO Auto-generated constructor stub
-
+Usuario::Usuario(string correo, string tarjeta):
+	correo(correo), tarjeta(tarjeta){}
+void Usuario::cargarAlquiler(Alquiler *alquiler){
+	alquileres.push_back(alquiler);
 }
 
-Usuario::~Usuario() {
-	// TODO Auto-generated destructor stub
+float Usuario::calcularMonto(Fecha fecha){
+return 0;
 }
 
-Usuario::Usuario(const Usuario &other) {
-	// TODO Auto-generated constructor stub
+Usuario::Usuario() {}
 
-}
+Usuario::~Usuario() {}
+
+Usuario::Usuario(const Usuario &other) {}
 

@@ -11,6 +11,7 @@
 #include <iostream>
 #include <vector>
 #include"Alquiler.h"
+#include"Fecha.h"
 
 using namespace std;
 
@@ -18,9 +19,12 @@ using namespace std;
 class Usuario {
 	string correo;
 	string tarjeta;
-	vector<Alquiler> alquileres;
+	vector<Alquiler*> alquileres;
 public:
 	Usuario();
+	Usuario(string correo, string tarjeta);
+	void cargarAlquiler(Alquiler *alquiler);
+	float calcularMonto(Fecha fecha);
 	virtual ~Usuario();
 	Usuario(const Usuario &other);
 };

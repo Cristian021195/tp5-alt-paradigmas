@@ -17,10 +17,13 @@ using namespace std;
 
 class Alquiler {
 	Fecha fecha;
-	//vector<Pelicula*> peliculas;
+	unsigned int capacidad;
 	array<Pelicula*, 5> peliculas;
 public:
+	//array<Pelicula*, 5> peliculas;
 	Alquiler();
+	Alquiler(Fecha fecha);
+	void cargarPelicula(Pelicula *pelicula);
 	virtual ~Alquiler();
 	Alquiler(const Alquiler &other);
 };

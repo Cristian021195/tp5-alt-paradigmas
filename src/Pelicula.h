@@ -16,12 +16,17 @@ using namespace std;
 
 
 class Pelicula {
+protected:
+	float precio_base;
 	string nombre;
 	Fecha fecha_estreno;
-	float precio_base;
 public:
 	Pelicula();
-	float montoPelicula();
+	Pelicula(string nombre, Fecha fecha_estreno, float precio_base);
+	string getNombre();
+	float getPrecioBase();
+	Fecha getFecha();
+	virtual float montoPelicula();
 	virtual void absFn()=0;
 	virtual ~Pelicula();
 	Pelicula(const Pelicula &other);
