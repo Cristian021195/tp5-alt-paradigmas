@@ -14,12 +14,23 @@ void Usuario::cargarAlquiler(Alquiler *alquiler){
 }
 
 float Usuario::calcularMonto(Fecha fecha){
-return 0;
+	float monto_fijo = 100;
+	for(int i = 0; i < alquileres.size(); i++){
+		for(int c = 0; c < alquileres[i]->peliculas.size(); c++){
+			monto_fijo += alquileres[i]->peliculas[c]->montoPelicula();
+		}
+	}
+
+	return monto_fijo;
 }
 
 Usuario::Usuario() {}
 
-Usuario::~Usuario() {}
+Usuario::~Usuario() {
+	for(int i = 0; i < alquileres.size(); i++){
+		delete(alquileres[i]);
+	}
+}
 
 Usuario::Usuario(const Usuario &other) {}
 

@@ -7,6 +7,8 @@
 
 #include "Alquiler.h"
 #include "Pelicula.h"
+#include "Nacional.h"
+#include "Internacional.h"
 #include "Fecha.h"
 #include <array>
 #include <iostream>
@@ -17,24 +19,46 @@ using namespace std;
 Alquiler::Alquiler(Fecha fecha):fecha(fecha), capacidad(0){}
 
 
-void Alquiler::cargarPelicula(Pelicula *pelicula){
+void Alquiler::cargarPelicula(tipoPelicula t, string origen, string nombre, Fecha fecha_estreno, float precio_base){
+
 	if(peliculas.empty()){
-		peliculas[0] = pelicula;
+		if(t == N){
+			Nacional *pelicula = new Nacional(nombre, fecha_estreno, precio_base);
+			peliculas[0] = pelicula;
+		}else if(t == I){
+			Internacional *pelicula = new Internacional(origen, nombre, fecha_estreno, precio_base);
+			peliculas[0] = pelicula;
+		}
 		capacidad++;
 	}else{
-		if(capacidad < 5){
-			peliculas[capacidad] = pelicula;
+		if(capacidad < 2){
+			if(t == N){
+				Nacional *pelicula = new Nacional(nombre, fecha_estreno, precio_base);
+				peliculas[capacidad] = pelicula;
+			}else if(t == I){
+				Internacional *pelicula = new Internacional(origen, nombre, fecha_estreno, precio_base);
+				peliculas[capacidad] = pelicula;
+			}
 			capacidad++;
 		}else{
-			cout << "Completado cupo peliculas x alquiler" << endl;
+			cout << "Completado cupo peliculas x alquiler (" << capacidad << ")" << endl;
 		}
 
 	}
 }
-
+void Alquiler::listarPeliculas(){
+	for(int i = 0; i < (int)peliculas.size(); i++){
+		cout << " Titulo: " << peliculas[i]->getNombre()
+		<< " Monto: " << peliculas[i]->montoPelicula() << endl;
+	}
+}
 Alquiler::Alquiler() {}
 
-Alquiler::~Alquiler() {}
+Alquiler::~Alquiler() {
+	for(int i = 0; i < (int)peliculas.size(); i++){
+		delete(peliculas[i]);
+	}
+}
 
 Alquiler::Alquiler(const Alquiler &other) {}
 
