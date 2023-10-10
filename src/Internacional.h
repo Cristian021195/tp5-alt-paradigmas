@@ -18,7 +18,7 @@ class Internacional: public Pelicula {
 	string origen;
 public:
 	Internacional();
-	Internacional(string origen, string nombre, Fecha fecha_estreno, float precio_base);
+	Internacional(string origen, string nombre, Fecha *fecha_estreno, float precio_base);
 	float montoPelicula();
 	void absFn();
 	virtual ~Internacional();

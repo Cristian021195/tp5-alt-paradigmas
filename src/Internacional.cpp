@@ -13,8 +13,8 @@
 using namespace std;
 
 Internacional::Internacional() {}
-Internacional::Internacional(string origen, string nombre, Fecha fecha_estreno, float precio_base):
-		origen(origen), Pelicula(nombre, fecha_estreno, precio_base){}
+Internacional::Internacional(string origen, string nombre, Fecha *fecha_estreno, float precio_base):
+		origen(origen), Pelicula(nombre, *fecha_estreno, precio_base){}
 
 float Internacional::montoPelicula(){
 	return precio_base*1.3;

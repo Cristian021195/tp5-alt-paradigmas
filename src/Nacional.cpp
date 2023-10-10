@@ -13,7 +13,7 @@
 using namespace std;
 
 Nacional::Nacional(){}
-Nacional::Nacional(string nombre, Fecha fecha_estreno, float precio_base):Pelicula(nombre, fecha_estreno, precio_base){}
+Nacional::Nacional(string nombre, Fecha *fecha_estreno, float precio_base):Pelicula(nombre, *fecha_estreno, precio_base){}
 float Nacional::montoPelicula(){
 	int diff = fecha_estreno.anio_actual - fecha_estreno.getAnio();
 	if(diff > 10){

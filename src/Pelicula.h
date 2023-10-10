@@ -22,7 +22,7 @@ protected:
 	Fecha fecha_estreno;
 public:
 	Pelicula();
-	Pelicula(string nombre, Fecha fecha_estreno, float precio_base);
+	Pelicula(string nombre, Fecha &fecha_estreno, float precio_base);
 	string getNombre();
 	float getPrecioBase();
 	Fecha getFecha();

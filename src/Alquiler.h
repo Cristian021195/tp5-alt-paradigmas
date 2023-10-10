@@ -18,16 +18,19 @@ using namespace std;
 enum tipoPelicula{N,I};
 
 class Alquiler {
-	Fecha fecha;
+	Fecha *fecha;
 	unsigned int capacidad;
 	array<Pelicula*, 5> peliculas;
 public:
 	//array<Pelicula*, 5> peliculas;
 	Alquiler();
-	Alquiler(Fecha fecha);
+	Alquiler(Fecha *fecha, int capacidad);
 	//string origen, string nombre, Fecha fecha_estreno, float precio_base):
 	//origen(origen), Pelicula(nombre, fecha_estreno, precio_base)
-	void cargarPelicula(tipoPelicula t, string origen, string nombre, Fecha fecha_estreno, float precio_base);
+	void cargarPelicula(tipoPelicula t, string origen, string nombre, Fecha *fecha_estreno, float precio_base);
+	array<Pelicula*, 5> getPeliculas();
+	Fecha* getFecha();
+	unsigned int getCapacidad();
 	void listarPeliculas();
 	virtual ~Alquiler();
 	Alquiler(const Alquiler &other);

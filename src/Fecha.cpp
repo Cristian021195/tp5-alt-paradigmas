@@ -6,10 +6,16 @@
  */
 
 #include "Fecha.h"
+#include <iostream>
+
+using namespace std;
+
 
 Fecha::Fecha() {}
 Fecha::Fecha(unsigned int dia, unsigned int mes, unsigned int anio):
-		dia(dia), mes(mes), anio(anio) {}
+		dia(dia), mes(mes), anio(anio) {
+	//cout << "f creada " << this << endl;
+}
 int Fecha::getDia(){
 	return dia;
 }
@@ -19,12 +25,12 @@ int Fecha::getMes(){
 int Fecha::getAnio(){
 	return anio;
 }
-string Fecha::getFecha(){
-	return "";
+void Fecha::getFechaStr(){
+	cout << dia << "/" << mes << "/" << anio << endl;
 }
 
 Fecha::~Fecha() {
-	// TODO Auto-generated destructor stub
+	//cout << "f eliminada" << endl;
 }
 
 Fecha::Fecha(const Fecha &other) {

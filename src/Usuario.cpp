@@ -15,10 +15,20 @@ void Usuario::cargarAlquiler(Alquiler *alquiler){
 
 float Usuario::calcularMonto(Fecha fecha){
 	float monto_fijo = 100;
-	for(int i = 0; i < alquileres.size(); i++){
-		for(int c = 0; c < alquileres[i]->peliculas.size(); c++){
-			monto_fijo += alquileres[i]->peliculas[c]->montoPelicula();
+	//cout << (int)alquileres.size() << endl;
+
+	for(int i = 0; i < (int)alquileres.size(); i++){
+
+		for(int c = 0; c < (int)alquileres[i]->getCapacidad(); c++){
+
+			if(alquileres[i]->getFecha()->getAnio() == fecha.getAnio()){
+				if(alquileres[i]->getFecha()->getMes() == fecha.getMes()){
+					monto_fijo += alquileres[i]->getPeliculas()[c]->montoPelicula();
+				}
+			}
+
 		}
+
 	}
 
 	return monto_fijo;
@@ -27,7 +37,7 @@ float Usuario::calcularMonto(Fecha fecha){
 Usuario::Usuario() {}
 
 Usuario::~Usuario() {
-	for(int i = 0; i < alquileres.size(); i++){
+	for(int i = 0; i < (int)alquileres.size(); i++){
 		delete(alquileres[i]);
 	}
 }

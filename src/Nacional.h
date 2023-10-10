@@ -16,7 +16,7 @@ using namespace std;
 class Nacional: public Pelicula {
 public:
 	Nacional();
-	Nacional(string nombre, Fecha fecha_estreno, float precio_base);
+	Nacional(string nombre, Fecha *fecha_estreno, float precio_base);
 	float montoPelicula();
 	void absFn();
 	virtual ~Nacional();

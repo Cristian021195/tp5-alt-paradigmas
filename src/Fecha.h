@@ -26,7 +26,7 @@ public:
 	int getDia();
 	int getMes();
 	int getAnio();
-	string getFecha();
+	void getFechaStr();
 	Fecha(const Fecha &other);
 };
 

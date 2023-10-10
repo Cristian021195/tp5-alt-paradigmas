@@ -8,7 +8,7 @@
 #include "Pelicula.h"
 
 Pelicula::Pelicula() {}
-Pelicula::Pelicula(string nombre, Fecha fecha_estreno, float precio_base):
+Pelicula::Pelicula(string nombre, Fecha &fecha_estreno, float precio_base):
 	nombre(nombre), fecha_estreno(fecha_estreno), precio_base(precio_base) {}
 
 string Pelicula::getNombre(){
